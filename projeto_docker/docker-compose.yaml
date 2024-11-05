@@ -1,5 +1,4 @@
-version: "3.9"  # Versão recomendada
-
+version: '3'
 services:
   web1:
     build:
@@ -9,7 +8,7 @@ services:
     ports:
       - "2000:2000"
     volumes:
-      - ./index_green.html:/usr/share/nginx/html/index.html  # Servindo index_green.html como index.html
+      - ./index_green.html:/usr/share/nginx/html/index.html
 
   web2:
     build:
@@ -19,7 +18,7 @@ services:
     ports:
       - "3000:2000"
     volumes:
-      - ./index_orange.html:/usr/share/nginx/html/index.html  # Servindo index_orange.html como index.html
+      - ./index_orange.html:/usr/share/nginx/html/index_orange.html
 
   web3:
     build:
@@ -29,4 +28,4 @@ services:
     ports:
       - "4000:2000"
     volumes:
-      - ./index_darkgreen.html:/usr/share/nginx/html/index.html  # Servindo index_darkgreen.html como index.html
+      - ./index_darkgreen.html:/usr/share/nginx/html/index_darkgreen.html
