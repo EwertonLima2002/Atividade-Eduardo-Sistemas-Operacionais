@@ -1,25 +1,32 @@
-version: '3.8'
+version: "3.9"  # Versão recomendada
+
 services:
   web1:
-    build: .
-    container_name: web_green
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web1
     ports:
-      - "8081:80"
+      - "2000:2000"
     volumes:
-      - ./index_green.html:/usr/share/nginx/html/index.html  # Mapeia index_green.html para index.html
+      - ./index_green.html:/usr/share/nginx/html/index.html  # Servindo index_green.html como index.html
 
   web2:
-    build: .
-    container_name: web_orange
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web2
     ports:
-      - "8082:80"
+      - "3000:2000"
     volumes:
-      - ./index_orange.html:/usr/share/nginx/html/index.html  # Mapeia index_orange.html para index.html
+      - ./index_orange.html:/usr/share/nginx/html/index.html  # Servindo index_orange.html como index.html
 
   web3:
-    build: .
-    container_name: web_blue
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web3
     ports:
-      - "8083:80"
+      - "4000:2000"
     volumes:
-      - ./index_darkgreen.html:/usr/share/nginx/html/index.html  # Mapeia index_darkgreen.html para index.html
+      - ./index_darkgreen.html:/usr/share/nginx/html/index.html  # Servindo index_darkgreen.html como index.html
